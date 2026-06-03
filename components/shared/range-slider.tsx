@@ -15,7 +15,7 @@ type SliderProps = {
 	onValueChange?: (values: number[]) => void;
 };
 
-function RangeSlider({
+const RangeSlider = ({
 	className,
 	min,
 	max,
@@ -24,7 +24,7 @@ function RangeSlider({
 	value,
 	onValueChange,
 	...props
-}: SliderProps) {
+}: SliderProps) => {
 	const initialValue = Array.isArray(value) ? value : [min, max];
 	const [localValues, setLocalValues] = useState(initialValue);
 
@@ -73,6 +73,6 @@ function RangeSlider({
 			))}
 		</SliderPrimitive.Root>
 	);
-}
+};
 
 export { RangeSlider };
